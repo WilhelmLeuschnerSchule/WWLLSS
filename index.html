@@ -29,7 +29,7 @@
             overflow-x: hidden;
         }
 
-        /* Анимация появления */
+        /* Animationen */
         .fade-in { animation: fadeInUp 0.8s both; }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
@@ -55,10 +55,16 @@
             justify-content: center; color: white; font-weight: 900;
         }
 
+        /* Hero Bereich mit Hintergrundbild */
         .hero {
-            background: var(--primary-dark);
-            color: white; padding: 100px 20px;
-            text-align: center; position: relative;
+            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+                        url('https://startcache.schulportal.hessen.de/img/schulbg/9206/990975d52c0c03866bc65f27ccfa637f-lg.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white; 
+            padding: 120px 20px;
+            text-align: center; 
+            position: relative;
         }
 
         .main-container { max-width: 800px; margin: -50px auto 60px; padding: 0 20px; position: relative; z-index: 10; }
@@ -109,7 +115,6 @@
 
         .btn-submit:hover { background: #b34218; transform: scale(1.02); }
 
-        /* Иконки настроения */
         .mood-box {
             display: flex; justify-content: space-around;
             padding: 20px 0; font-size: 2rem;
@@ -117,7 +122,6 @@
         .mood-btn { cursor: pointer; transition: 0.3s; filter: grayscale(1); }
         .mood-btn:hover { transform: scale(1.3); filter: grayscale(0); }
 
-        /* Модалка */
         .success-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.9); z-index: 3000;
@@ -133,13 +137,13 @@
 <nav>
     <a href="#" class="nav-brand">
         <div class="nav-logo-circle">W</div>
-        <div class="nav-text">WLS NIESTETAL</div>
+        <div class="nav-text" style="color: var(--primary-dark); font-weight: 800;">WLS NIESTETAL</div>
     </a>
 </nav>
 
 <section class="hero">
-    <h1 style="font-family: 'Montserrat';">Gestalte deine Schule.</h1>
-    <p>Deine Ideen sind der Treibstoff für unsere Veränderung.</p>
+    <h1 style="font-family: 'Montserrat', sans-serif; font-size: clamp(2rem, 8vw, 3.5rem); margin-bottom: 10px;">Gestalte deine Schule.</h1>
+    <p style="font-size: clamp(1rem, 3vw, 1.2rem); opacity: 0.9;">Deine Ideen sind der Treibstoff für unsere Veränderung.</p>
 </section>
 
 <div class="main-container">
@@ -185,9 +189,9 @@
     <div class="card fade-in" style="background: #f0f7ff; border: 2px dashed #3b82f6;">
         <span class="section-tag" style="color: #3b82f6;">Freies Feld</span>
         <h2>💡 Hast du noch eine ganz andere Idee?</h2>
-        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Egal was — Technik, Pausenhof, Regeln oder Events. Schreib es hier!</p>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Egal ob Technik, Pausenhof oder Events. Schreib es hier!</p>
         <form class="feedbackForm">
-            <textarea rows="4" placeholder="Schreib hier einfach alles auf, was dir durch den Kopf geht..." required></textarea>
+            <textarea rows="4" placeholder="Schreib hier alles auf, was dir durch den Kopf geht..." required></textarea>
             <button type="submit" class="btn-submit" style="background: #3b82f6;">IDEE ABSCHICKEN</button>
         </form>
     </div>
@@ -210,7 +214,7 @@
         <div style="font-size: 5rem; margin-bottom: 20px;">🚀</div>
         <h2 style="color: white; font-size: 2rem;">Vielen Dank!</h2>
         <p>Deine Stimme macht die WLS ein Stück besser.</p>
-        <button class="btn-submit" style="width: auto; padding: 15px 50px; margin-top: 30px;">OK</button>
+        <button class="btn-submit" style="width: auto; padding: 15px 50px; margin-top: 30px;" onclick="closeModal()">OK</button>
     </div>
 </div>
 

@@ -135,7 +135,6 @@
         <div class="nav-logo-circle">W</div>
         <div class="nav-text">WLS NIESTETAL</div>
     </a>
-    <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary-orange);"></div>
 </nav>
 
 <section class="hero">
@@ -197,9 +196,9 @@
         <span class="section-tag">Mood Check</span>
         <h2>Wie geht es dir heute in der Schule?</h2>
         <div class="mood-box">
-            <span class="mood-btn" onclick="voteMood('happy')">😊</span>
-            <span class="mood-btn" onclick="voteMood('neutral')">😐</span>
             <span class="mood-btn" onclick="voteMood('sad')">☹️</span>
+            <span class="mood-btn" onclick="voteMood('neutral')">😐</span>
+            <span class="mood-btn" onclick="voteMood('happy')">😊</span>
         </div>
         <p id="moodText" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">Klicke auf ein Emoji, um anonym abzustimmen.</p>
     </div>
@@ -210,7 +209,7 @@
     <div>
         <div style="font-size: 5rem; margin-bottom: 20px;">🚀</div>
         <h2 style="color: white; font-size: 2rem;">Vielen Dank!</h2>
-        <p>Deine Stimme macht die WLS ein Stück besser.</p>
+        <p>Deine Stimme macht die WLS ein Stück лучше.</p>
         <button class="btn-submit" style="width: auto; padding: 15px 50px; margin-top: 30px;">OK</button>
     </div>
 </div>
@@ -221,7 +220,6 @@
 </footer>
 
 <script>
-    // Обработка форм
     document.querySelectorAll('.feedbackForm').forEach(form => {
         form.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -233,7 +231,6 @@
     function showModal() { document.getElementById('successModal').style.display = 'flex'; }
     function closeModal() { document.getElementById('successModal').style.display = 'none'; }
 
-    // Логика для эмодзи
     function voteMood(mood) {
         document.getElementById('moodText').innerText = "Danke! Deine Stimmung wurde erfasst.";
         document.querySelectorAll('.mood-btn').forEach(btn => btn.style.filter = "grayscale(0)");

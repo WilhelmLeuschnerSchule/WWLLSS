@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>WLS Niestetal | Offizielles Feedback-Portal 2026</title>
+    <title>WLS Niestetal | Vision 2026</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
@@ -16,22 +16,21 @@
             --card-bg: #ffffff;
             --text-main: #1e293b;
             --text-muted: #64748b;
-            --radius: 20px;
-            --transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+            --radius-lg: 24px;
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        html { scroll-behavior: smooth; }
-
         body {
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-body);
             color: var(--text-main);
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
+            margin: 0; padding: 0;
+            overflow-x: hidden;
         }
 
+        /* Анимация появления */
+        .fade-in { animation: fadeInUp 0.8s both; }
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
@@ -45,241 +44,88 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 5%;
-            border-bottom: 3px solid var(--primary-orange);
-            position: sticky;
-            top: 0;
-            z-index: 2000;
+            border-bottom: 2px solid var(--primary-orange);
+            position: sticky; top: 0; z-index: 2000;
         }
 
-        .nav-brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-        }
-
+        .nav-brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
         .nav-logo-circle {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-orange);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 900;
-        }
-
-        .nav-text {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 800;
-            color: var(--primary-dark);
-            font-size: 1.2rem;
-            letter-spacing: -0.5px;
+            width: 40px; height: 40px; background: var(--primary-orange);
+            border-radius: 10px; display: flex; align-items: center;
+            justify-content: center; color: white; font-weight: 900;
         }
 
         .hero {
             background: var(--primary-dark);
-            color: white;
-            padding: 100px 20px 140px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+            color: white; padding: 100px 20px;
+            text-align: center; position: relative;
         }
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: radial-gradient(circle at center, rgba(217, 83, 30, 0.2) 0%, transparent 70%);
-        }
-
-        .hero h1 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: clamp(2rem, 8vw, 3.5rem);
-            margin: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            opacity: 0.8;
-            max-width: 700px;
-            margin: 20px auto;
-            position: relative;
-            z-index: 1;
-        }
-
-        .main-container {
-            max-width: 900px;
-            margin: -80px auto 60px;
-            padding: 0 20px;
-            position: relative;
-            z-index: 10;
-        }
+        .main-container { max-width: 800px; margin: -50px auto 60px; padding: 0 20px; position: relative; z-index: 10; }
 
         .card {
             background: var(--card-bg);
-            border-radius: var(--radius);
-            padding: clamp(20px, 5vw, 40px);
-            margin-bottom: 35px;
-            box-shadow: 0 15px 30px -5px rgba(0,0,0,0.05);
-            border: 1px solid rgba(255,255,255,1);
-            animation: fadeInUp 0.8s var(--transition);
-            overflow: hidden;
+            border-radius: var(--radius-lg);
+            padding: clamp(25px, 5vw, 40px);
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            transition: var(--transition);
+            border: 1px solid rgba(0,0,0,0.02);
         }
+
+        .card:hover { transform: translateY(-5px); box-shadow: 0 25px 50px rgba(0,0,0,0.1); }
 
         .section-tag {
             color: var(--primary-orange);
-            font-weight: 800;
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-            display: block;
+            font-weight: 800; font-size: 0.75rem;
+            text-transform: uppercase; letter-spacing: 2px;
+            margin-bottom: 15px; display: block;
         }
 
         h2 {
             font-family: 'Montserrat', sans-serif;
-            font-size: clamp(1.3rem, 4.5vw, 1.8rem); /* Улучшенное масштабирование */
-            margin: 0 0 25px 0;
-            color: var(--primary-dark);
-            overflow-wrap: break-word; /* Исправление вылета текста */
-            word-wrap: break-word;
-            hyphens: auto; /* Перенос длинных слов */
+            font-size: clamp(1.3rem, 4vw, 1.7rem);
+            margin: 0 0 20px 0; color: var(--primary-dark);
         }
 
-        .form-group { margin-bottom: 30px; position: relative; }
-        
-        label {
-            display: block;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--primary-dark);
+        textarea, input {
+            width: 100%; padding: 18px;
+            border: 2px solid #e2e8f0; border-radius: 15px;
+            font-size: 1rem; font-family: inherit;
+            background: #fdfdfd; transition: 0.3s;
         }
 
-        input, select, textarea {
-            width: 100%;
-            padding: 18px;
-            border: 2px solid #e2e8f0;
-            border-radius: 15px;
-            font-size: 1rem;
-            font-family: inherit;
-            background: #fdfdfd;
-            transition: var(--transition);
-        }
-
-        input:focus, select:focus, textarea:focus {
-            outline: none;
-            border-color: var(--primary-orange);
-            box-shadow: 0 0 0 5px rgba(217, 83, 30, 0.1);
-            background: #fff;
+        textarea:focus, input:focus {
+            outline: none; border-color: var(--primary-orange);
+            background: #fff; box-shadow: 0 0 0 4px rgba(217, 83, 30, 0.1);
         }
 
         .btn-submit {
-            background: var(--primary-orange);
-            color: white;
-            border: none;
-            padding: 22px;
-            border-radius: 15px;
-            font-size: 1.1rem;
-            font-weight: 800;
-            cursor: pointer;
-            width: 100%;
-            transition: var(--transition);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            background: var(--primary-orange); color: white;
+            border: none; padding: 18px; border-radius: 15px;
+            font-size: 1rem; font-weight: 800; cursor: pointer;
+            width: 100%; transition: 0.3s; margin-top: 15px;
         }
 
-        .btn-submit:hover {
-            transform: translateY(-5px);
-            background: #b34218;
-            box-shadow: 0 15px 30px rgba(217, 83, 30, 0.3);
+        .btn-submit:hover { background: #b34218; transform: scale(1.02); }
+
+        /* Иконки настроения */
+        .mood-box {
+            display: flex; justify-content: space-around;
+            padding: 20px 0; font-size: 2rem;
         }
+        .mood-btn { cursor: pointer; transition: 0.3s; filter: grayscale(1); }
+        .mood-btn:hover { transform: scale(1.3); filter: grayscale(0); }
 
-        .ranking-item {
-            display: flex;
-            align-items: center;
-            padding: 25px;
-            background: #f8fafc;
-            border-radius: 18px;
-            margin-bottom: 15px;
-            border: 1px solid #edf2f7;
-            transition: var(--transition);
-        }
-
-        .ranking-item:hover {
-            transform: scale(1.02);
-            background: white;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            border-color: var(--primary-orange);
-        }
-
-        .rank-pos {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.8rem;
-            font-weight: 900;
-            color: var(--primary-orange);
-            width: 50px;
-        }
-
-        .teacher-info { flex-grow: 1; }
-        .teacher-info b { font-size: 1.2rem; display: block; }
-        .teacher-info small { color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; font-weight: 600; }
-
-        .vote-pill {
-            background: var(--primary-dark);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-weight: 800;
-        }
-
-        .empty-ranking {
-            text-align: center;
-            padding: 60px 20px;
-            background: #f1f5f9;
-            border-radius: var(--radius);
-            border: 3px dashed #cbd5e1;
-            color: var(--text-muted);
-        }
-
-        footer {
-            background: white;
-            padding: 60px 20px;
-            text-align: center;
-            border-top: 1px solid #e2e8f0;
-        }
-
-        .footer-logo {
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 900;
-            color: var(--primary-orange);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
+        /* Модалка */
         .success-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.85);
-            z-index: 3000;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            backdrop-filter: blur(8px);
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.9); z-index: 3000;
+            display: none; align-items: center; justify-content: center;
+            text-align: center; color: white; backdrop-filter: blur(8px);
         }
 
-        @media (max-width: 768px) {
-            .hero { padding: 80px 20px 120px; }
-            .card { padding: 25px; border-radius: 25px; }
-            .main-container { margin-top: -60px; }
-        }
+        footer { padding: 40px; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -289,140 +135,112 @@
         <div class="nav-logo-circle">W</div>
         <div class="nav-text">WLS NIESTETAL</div>
     </a>
-    <div style="font-size: 0.8rem; font-weight: 700; color: var(--primary-orange);">STATUS: LIVE</div>
+    <div style="font-size: 0.7rem; font-weight: 800; color: var(--primary-orange);">FUTURE LAB</div>
 </nav>
 
 <section class="hero">
-    <h1>Eure Schule, eure Meinung.</h1>
-    <p>Das digitale Portal für Feedback und das Lehrer-Ranking der Wilhelm-Leuschner-Schule.</p>
+    <h1 style="font-family: 'Montserrat';">Gestalte deine Schule.</h1>
+    <p>Deine Ideen sind der Treibstoff für unsere Veränderung.</p>
 </section>
 
 <div class="main-container">
 
-    <div class="card">
-        <span class="section-tag">Anonymes Feedback</span>
-        <h2>💡 Verbesserungsvorschläge</h2>
-        <form id="feedbackForm">
-            <div class="form-group">
-                <label>Themenbereich</label>
-                <select required>
-                    <option value="" disabled selected>Kategorie wählen...</option>
-                    <option>🍽️ Mensa & Kartenzahlung</option>
-                    <option>🚿 Toiletten & Sauberkeit</option>
-                    <option>💻 WLAN & iPad Probleme</option>
-                    <option>🏀 Sport & Pausenhof</option>
-                    <option>👩‍🏫 Unterricht & Methoden</option>
-                    <option>🌀 Sonstiges</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label>Was genau können wir verbessern?</label>
-                <textarea rows="6" placeholder="Deine Nachricht an die SV..." required></textarea>
-            </div>
-            <button type="submit" class="btn-submit">NACHRICHT ABSENDEN</button>
+    <div class="card fade-in">
+        <span class="section-tag">Wohlbefinden</span>
+        <h2>Wodurch würdest du dich in der Schule wohler fühlen?</h2>
+        <form class="feedbackForm">
+            <textarea rows="3" placeholder="Antwort eingeben..." required></textarea>
+            <button type="submit" class="btn-submit">ABSENDEN</button>
         </form>
     </div>
 
-    <div class="card">
-        <span class="section-tag">Demokratie & Spaß</span>
-        <h2>🗳️ Lehrer des Jahres</h2>
-        <p style="color: var(--text-muted); margin-bottom: 25px;">Wähle deine Lieblingslehrkraft aus der Liste.</p>
-        
-        <div class="form-group">
-            <label>Lehrkraft auswählen</label>
-            <select id="teacherSearch" required>
-                <option value="" disabled selected>Name auswählen...</option>
-                <option>Frau Allendorf</option><option>Frau Balhorn</option><option>Frau Bejcon-Wittig</option>
-                <option>Frau Ben Nafka</option><option>Herr Benz</option><option>Frau Benedetti</option>
-                <option>Frau Beyer</option><option>Frau Bleichert</option><option>Frau Bös</option>
-                <option>Frau Böttcher</option><option>Herr Braukhof</option><option>Herr Bräumer</option>
-                <option>Herr Bremmer</option><option>Frau Dettmer</option><option>Frau Diedrich</option>
-                <option>Herr Eckel</option><option>Frau Egbers</option><option>Frau Fischer-Wasels</option>
-                <option>Frau Gaida</option><option>Frau Gerke</option><option>Frau Gerber</option>
-                <option>Frau Grebe</option><option>Frau Gutheil</option><option>Herr Hannappel</option>
-                <option>Frau Herrmann</option><option>Herr Hille</option><option>Frau Hines</option>
-                <option>Herr Hödl</option><option>Herr Jandt</option><option>Frau Jandt</option>
-                <option>Frau Kaiser</option><option>Frau Karkos</option><option>Herr Kasper</option>
-                <option>Frau Koch</option><option>Herr Dr. Krieg</option><option>Frau Krüger</option>
-                <option>Frau Kudlek</option><option>Herr Künzel</option><option>Frau Kuntschik</option>
-                <option>Herr Linsing</option><option>Frau Maisner-Unruh</option><option>Herr Malena</option>
-                <option>Frau Marques Kehl</option><option>Herr Matthies</option><option>Frau Methe</option>
-                <option>Frau Moldenhauer</option><option>Herr Nägel</option><option>Frau Niebuhr</option>
-                <option>Herr Otter</option><option>Herr Pittner</option><option>Frau Prause</option>
-                <option>Herr Rassek</option><option>Herr Schöps</option><option>Frau Dr. Schrage-Lang</option>
-                <option>Frau Schreiber</option><option>Frau Schröder</option><option>Frau Schummer</option>
-                <option>Frau Schwarzwälder</option><option>Frau Seibert</option><option>Frau Siebert</option>
-                <option>Frau Sjöström</option><option>Frau Sobat-Feizi</option><option>Frau Steffen</option>
-                <option>Frau Stiebich</option><option>Frau Stürmer</option><option>Frau Tadych</option>
-                <option>Frau Thies</option><option>Frau Umbach</option><option>Frau Wenz</option>
-                <option>Herr Wilke</option><option>Frau Worch</option><option>Frau Zaun</option>
-                <option>Frau Zypries</option>
-            </select>
-        </div>
-        <button type="button" class="btn-submit" onclick="processVote()" style="background: var(--primary-dark);">STIMME ABGEBEN</button>
+    <div class="card fade-in">
+        <span class="section-tag">Analyse</span>
+        <h2>Was sollte unsere Schule mehr oder weniger machen?</h2>
+        <form class="feedbackForm">
+            <textarea rows="3" placeholder="Deine Meinung..." required></textarea>
+            <button type="submit" class="btn-submit">FEEDBACK GEBEN</button>
+        </form>
     </div>
 
-    <div class="card" id="ranking-section">
-        <span class="section-tag">Live Auswertung</span>
-        <h2>🏆 Aktuelle Top 10</h2>
-        <div id="rankingDisplay"></div>
+    <div class="card fade-in" style="border-top: 5px solid #ffcc00;">
+        <span class="section-tag">🍽️ Mensa-Check</span>
+        <h2>Gerichte-Ideen & Mensa-Feedback</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Das Essen schmeckt nicht? Schreib uns, was auf den Speiseplan muss!</p>
+        <form class="feedbackForm">
+            <input type="text" placeholder="Dein Lieblingsgericht für die Mensa..." required style="margin-bottom: 10px;">
+            <textarea rows="2" placeholder="Was stört dich aktuell?"></textarea>
+            <button type="submit" class="btn-submit" style="background: #e6b800;">IDEE EINREICHEN</button>
+        </form>
     </div>
+
+    <div class="card fade-in">
+        <span class="section-tag">Vision</span>
+        <h2>Wenn du eine Sache an der Schule ändern könntest – was wäre das?</h2>
+        <form class="feedbackForm">
+            <textarea rows="3" placeholder="Meine wichtigste Änderung wäre..." required></textarea>
+            <button type="submit" class="btn-submit">VORSCHLAG SPEICHERN</button>
+        </form>
+    </div>
+
+    <div class="card fade-in" style="background: #f0f7ff; border: 2px dashed #3b82f6;">
+        <span class="section-tag" style="color: #3b82f6;">Freies Feld</span>
+        <h2>💡 Hast du noch eine ganz andere Idee?</h2>
+        <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 15px;">Egal was — Technik, Pausenhof, Regeln или Events. Schreib es hier!</p>
+        <form class="feedbackForm">
+            <textarea rows="4" placeholder="Schreib hier einfach alles auf, was dir durch den Kopf geht..." required></textarea>
+            <button type="submit" class="btn-submit" style="background: #3b82f6;">IDEE ABSCHICKEN</button>
+        </form>
+    </div>
+
+    <div class="card fade-in" style="text-align: center;">
+        <span class="section-tag">Mood Check</span>
+        <h2>Wie geht es dir heute in der Schule?</h2>
+        <div class="mood-box">
+            <span class="mood-btn" onclick="voteMood('happy')">😊</span>
+            <span class="mood-btn" onclick="voteMood('neutral')">😐</span>
+            <span class="mood-btn" onclick="voteMood('sad')">☹️</span>
+        </div>
+        <p id="moodText" style="font-size: 0.8rem; color: var(--text-muted); margin-top: 10px;">Klicke auf ein Emoji, um anonym abzustimmen.</p>
+    </div>
+
 </div>
 
 <div id="successModal" class="success-overlay" onclick="closeModal()">
     <div>
-        <h1 style="font-size: 5rem;">✅</h1>
-        <h2 style="color: white; font-size: 2.5rem;">Erfolgreich!</h2>
-        <p>Deine Auswahl wurde anonym verarbeitet.</p>
-        <button class="btn-submit" style="width: auto; padding: 15px 40px; margin: 20px auto;">OK</button>
+        <div style="font-size: 5rem; margin-bottom: 20px;">🚀</div>
+        <h2 style="color: white; font-size: 2rem;">Vielen Dank!</h2>
+        <p>Deine Stimme macht die WLS ein Stück besser.</p>
+        <button class="btn-submit" style="width: auto; padding: 15px 50px; margin-top: 30px;">OK</button>
     </div>
 </div>
 
 <footer>
-    <div class="footer-logo">WLS Niestetal</div>
-    <p>Ein Schülerprojekt zur Verbesserung der Schulkultur 2026.</p>
+    <div style="font-weight: 800; color: var(--primary-orange); margin-bottom: 10px;">WLS NIESTETAL</div>
+    <p>Projektpräsentation 2026<br>Zukunft gemeinsam gestalten.</p>
 </footer>
 
 <script>
-    let storageKey = 'wls_v4_final';
-    let db = JSON.parse(localStorage.getItem(storageKey)) || { votes: {} };
-
-    function renderRanking() {
-        const display = document.getElementById('rankingDisplay');
-        const sorted = Object.entries(db.votes)
-            .map(([name, count]) => ({ name, count }))
-            .sort((a, b) => b.count - a.count);
-
-        if (sorted.length === 0) {
-            display.innerHTML = `<div class="empty-ranking"><h3>Noch keine Stimmen</h3><p>Gib die erste Stimme ab!</p></div>`;
-            return;
-        }
-
-        display.innerHTML = sorted.slice(0, 10).map((item, index) => `
-            <div class="ranking-item">
-                <div class="rank-pos">#${index + 1}</div>
-                <div class="teacher-info"><b>${item.name}</b><small>Lehrkraft</small></div>
-                <div class="vote-pill">${item.count} Votes</div>
-            </div>
-        `).join('');
-    }
-
-    function processVote() {
-        const select = document.getElementById('teacherSearch');
-        const name = select.value;
-        if (!name) return alert("Bitte wähle einen Namen!");
-        db.votes[name] = (db.votes[name] || 0) + 1;
-        localStorage.setItem(storageKey, JSON.stringify(db));
-        showModal(); renderRanking(); select.value = "";
-    }
+    // Обработка форм
+    document.querySelectorAll('.feedbackForm').forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            showModal();
+            this.reset();
+        });
+    });
 
     function showModal() { document.getElementById('successModal').style.display = 'flex'; }
     function closeModal() { document.getElementById('successModal').style.display = 'none'; }
-    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
-        e.preventDefault(); showModal(); this.reset();
-    });
 
-    window.onload = renderRanking;
+    // Логика для эмодзи
+    function voteMood(mood) {
+        document.getElementById('moodText').innerText = "Danke! Deine Stimmung wurde erfasst.";
+        document.querySelectorAll('.mood-btn').forEach(btn => btn.style.filter = "grayscale(0)");
+        setTimeout(() => {
+            showModal();
+        }, 500);
+    }
 </script>
 
 </body>
